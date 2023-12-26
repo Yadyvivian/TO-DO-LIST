@@ -60,7 +60,7 @@ filterList=(x)=>{
 
 editList=(listId)=>{
     let currentText = document.getElementById(`text${listId}`);
-    let newText = prompt("Wanna Change list?",currentText.innerHTML);
+    let newText = prompt("¿Quieres cambiar esto de la lista?",currentText.innerHTML);
     if (filterList(newText)) {
         currentText.innerHTML = newText; 
     }
@@ -68,7 +68,7 @@ editList=(listId)=>{
 
 deleteList=(listId)=>{
     let current = document.getElementById(`text${listId}`).innerHTML;
-       let deleteComfirm = confirm(`Are you sure to delete ${current}`);
+       let deleteComfirm = confirm(`¿Estas seguro de eliminar esto? ${current}`);
     if (deleteComfirm) {
          let p = document.getElementById("list")
         let c = document.getElementById(`list${listId}`);
