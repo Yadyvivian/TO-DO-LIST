@@ -1,0 +1,68 @@
+* {
+    margin: 0 auto;
+    padding: 0 auto;
+    overflow-x: hidden;
+  }
+  
+  .section-start {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-attachment: fixed;
+    align-items: center;
+    background-size: cover;
+    background-color: #FDF8F9;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    background-position: center bottom;
+    background-repeat: no-repeat;
+  }
+  
+  .titles {
+    margin: 60px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .section-start h1 {
+    width: 182px;
+    height: 215px;
+    flex-shrink: 0;
+    color: #944B3F;
+    text-align: center;
+    font-family: Kurale;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 276px;
+    height: 345px;
+    flex-shrink: 0;
+    fill: #FCD3AA;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+  }
+  
+  .koala-01 {
+    margin-top: -70px;
+    margin-bottom: 20px;
+    max-width: 100%;
+  }
+  
+  button {
+    margin: 50px;
+    cursor: pointer;
+    border-radius: 20px;
+    margin-top: 20px;
+    border: none;
+    width: 219px;
+    height: 46px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    background: #D2B9B1;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  }
+  
+  button:hover {
+    transform: scale(1.1);
+    transition: 0.5s ease-in-out;
+    filter: brightness(1.50);
+  }
