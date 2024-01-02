@@ -1,0 +1,31 @@
+* {
+    margin: 0 auto;
+    padding: 0 auto;
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    background: #CDD2BE;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  }
+  
+  
+  
+   h1 {
+    color: #944B3F;
+    text-align: center;
+    font-family: Kurale;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  
+  .koala-05 {
+    margin-top: 70px;
+    margin-bottom: 20px;
+    max-width: 100%;
+  }
