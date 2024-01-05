@@ -35,7 +35,7 @@ nav li {
 }
 
 .btn0 {
-    
+    padding-top:10%;
     width: 360px;
     height: 81px;
     flex-shrink: 0;
@@ -54,6 +54,7 @@ nav li {
 }
 
 .btn1 {
+    margin: 8%;
     width: 276px;
     height: 51px;
     flex-shrink: 0;
@@ -68,7 +69,7 @@ nav li {
 }
 
 .btn2 {
-    
+    margin: 8%;
     width: 276px;
     height: 51px;
     flex-shrink: 0;
@@ -83,6 +84,7 @@ nav li {
 }
 
 #Usuario{
+    
     flex-direction: column;
     width: 276px;
     height: 54px;
@@ -167,6 +169,7 @@ nav li {
   }
 
   .library {
+    padding: 10px;
     display: block;
     width: 20%;
     margin: auto;
@@ -177,3 +180,21 @@ nav li {
     margin: auto;
 }
 
+
+@keyframes rotate {from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}}
+@-webkit-keyframes rotate {from {-webkit-transform: rotate(0deg);}
+  to {-webkit-transform: rotate(360deg);}}
+    
+    
+    .library {
+        -webkit-animation: 3s rotate linear infinite;
+        animation: 3s rotate linear infinite;
+        -webkit-transform-origin: 50% 50%;
+        transform-origin: 50% 50%;}
+        
+    }
+    
+    
+
+       
