@@ -14,13 +14,15 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!usuarioGuardado) {
         window.location.href = 'index.html';
     } else {
-        cargarTareas(); // Cargar tareas almacenadas al cargar la página
+        cargarTareas(); 
     }
 });
 
 addList = () => {
     let inputText = filterList(input.value);
-    let inputDesc = filterList(inputDescription.value)
+    let inputDesc = filterList(inputDescription.value);
+    let priority = document.querySelector('input[name="priority"]:checked').value;
+
     if (inputText && inputDesc) {
         list.innerHTML += ` <li class="my-3 py-3 shadow list-group-item" id="list${listNum}">
             <div class="row">
@@ -31,7 +33,10 @@ addList = () => {
                     <span class="h4" id="text${listNum}">${inputText}</span>
                     <textarea class="my-2 py-2 form-control shadow" placeholder="Agregar descripción" id="description${listNum}" disabled>${inputDesc}</textarea>
                 </div>
-                <div class="col-4">
+                <div class="col-3">
+                    <span id="priority${listNum}">${priority}</span>
+                </div>
+                <div class="col-2">
                     <button class="btn btn-danger" onclick="deleteList(${listNum})">
                         <i class="fas fa-trash de" data="eliminado" id="0"></i>
                     </button>
@@ -76,7 +81,7 @@ editList = (listId) => {
     let newText = prompt("¿Quieres cambiar esto de la lista?", currentText.innerHTML);
     if (filterList(newText)) {
         currentText.innerHTML = newText;
-        guardarTareas(); // Guardar tarea editada
+        guardarTareas();
     }
 }
 
@@ -87,7 +92,7 @@ deleteList = (listId) => {
         let p = document.getElementById("list")
         let c = document.getElementById(`list${listId}`);
         p.removeChild(c);
-        guardarTareas(); // Guardar tarea eliminada
+        guardarTareas(); 
     } else {
         console.log("deleted");
     }
@@ -149,7 +154,7 @@ function cargarTareas() {
 }
 
 function cerrarSesion() {
-    guardarTareas(); // Guardar tareas al cerrar sesión
+    guardarTareas(); 
     localStorage.removeItem('usuario');
-    window.location.href = 'finish.html'; // Redirigir a la página de inicio de sesión
+    window.location.href = 'finish.html'; 
 }
