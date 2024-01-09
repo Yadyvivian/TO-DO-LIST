@@ -115,19 +115,27 @@ function mostrarPendientes() {
 
 
 function guardarTareas() {
+    const usuario = localStorage.getItem('usuario');
+    let usuariosTareas = JSON.parse(localStorage.getItem('usuariosTareas')) || {};
+
     const tareas = Array.from(list.children).map(li => {
         const tarea = li.querySelector('span').innerText;
         const descripcion = li.querySelector('textarea').value;
-        return { tarea, descripcion };
+        const priority = li.querySelector(`#priority${li.id.slice(4)}`).innerText;
+        const completada = li.querySelector('span').classList.contains('text-decoration-line-through');
+        return { tarea, descripcion, priority, completada };
     });
 
-    localStorage.setItem('tareas', JSON.stringify(tareas));
+    usuariosTareas[usuario] = tareas;
+    localStorage.setItem('usuariosTareas', JSON.stringify(usuariosTareas));
 }
 
 function cargarTareas() {
-    const tareasGuardadas = localStorage.getItem('tareas');
-    if (tareasGuardadas) {
-        const tareas = JSON.parse(tareasGuardadas);
+    const usuario = localStorage.getItem('usuario');
+    let usuariosTareas = JSON.parse(localStorage.getItem('usuariosTareas')) || {};
+
+    if (usuariosTareas[usuario]) {
+        const tareas = usuariosTareas[usuario];
         tareas.forEach(obj => {
             list.innerHTML += `<li class="my-3 py-3 shadow list-group-item" id="list${listNum}">
                 <div class="row">
@@ -138,7 +146,10 @@ function cargarTareas() {
                         <span class="h4" id="text${listNum}">${obj.tarea}</span>
                         <textarea class="my-2 py-2 form-control shadow" placeholder="Agregar descripción" id="description${listNum}" disabled>${obj.descripcion}</textarea>
                     </div>
-                    <div class="col-4">
+                    <div class="col-3">
+                        <span id="priority${listNum}">${obj.priority}</span>
+                    </div>
+                    <div class="col-2">
                         <button class="btn btn-danger" onclick="deleteList(${listNum})">
                             <i class="fas fa-trash de" data="eliminado" id="0"></i>
                         </button>
