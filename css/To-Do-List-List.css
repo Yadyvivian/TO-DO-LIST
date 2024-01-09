@@ -3,8 +3,16 @@ body {
     padding: 0;
 }
 
-.koala4{
-    margin-top: 70px;
-    margin-bottom: 20px;
+div img {
+    display:flex;
+    align-items: center;
+    justify-content: center;
     max-width: 100%;
+    margin-left: 30%;
+} 
+
+@media (max-width:700px) {
+    div img {
+     margin-left: 0%;
+    }
 }
