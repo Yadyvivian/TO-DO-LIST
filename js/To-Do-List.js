@@ -123,13 +123,14 @@ function guardarTareas() {
         const descripcion = li.querySelector('textarea').value;
         const priority = li.querySelector(`#priority${li.id.slice(4)}`).innerText;
         const completada = li.querySelector('span').classList.contains('text-decoration-line-through');
-        return { tarea, descripcion, priority, completada };
+        const categoria = li.querySelector(`#category${li.id.slice(4)}`).value;
+
+        return { tarea, descripcion, priority, completada, categoria };
     });
 
     usuariosTareas[usuario] = tareas;
     localStorage.setItem('usuariosTareas', JSON.stringify(usuariosTareas));
 }
-
 function cargarTareas() {
     const usuario = localStorage.getItem('usuario');
     let usuariosTareas = JSON.parse(localStorage.getItem('usuariosTareas')) || {};
