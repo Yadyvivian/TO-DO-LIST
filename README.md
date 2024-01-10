@@ -1,9 +1,8 @@
-To-Do List
-
+To-Do List App con Inicio de Sesión
 En este block de notas los usuarios pueden agregar tareas, modificar su descripción y marcarlas como completadas. Dirigido a niños y niñas que estan inmergidos en la lógica de programación.
 
-Características Inicio de Sesión: Los usuarios pueden crear una cuenta o iniciar sesión si ya tienen una.
-
+Características
+Inicio de Sesión: Los usuarios pueden crear una cuenta o iniciar sesión si ya tienen una.
 Agregar Tareas: Se pueden agregar nuevas tareas con descripciones.
 
 Editar Tareas: Las tareas existentes pueden editarse para cambiar su descripción.
@@ -25,5 +24,3 @@ Marcar como Completadas: Una vez finalizada una tarea, marca la casilla de verif
 Tecnologías Utilizadas
 
 Frontend: HTML, CSS, JavaScript
-
-Autor: Viviana Sánchez
