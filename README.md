@@ -1,4 +1,4 @@
-To-Do List App con Inicio de Sesión
+To-Do List 
 En este block de notas los usuarios pueden agregar tareas, modificar su descripción y marcarlas como completadas. Dirigido a niños y niñas que estan inmergidos en la lógica de programación.
 
 Características
