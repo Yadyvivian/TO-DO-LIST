@@ -8,15 +8,17 @@ let list = document.getElementById("list");
 let minimalValue = 3;
 let listNum = 0;
 
-document.addEventListener('DOMContentLoaded', function () {
-    const usuarioGuardado = localStorage.getItem('usuario');
 
-    if (!usuarioGuardado) {
-        window.location.href = 'index.html';
-    } else {
-        cargarTareas(); 
-    }
-});
+
+const usuarioGuardado = localStorage.getItem('usuario');
+
+if (!usuarioGuardado) {
+    
+    console.log('No se encontró un usuario guardado.');
+} else {
+    cargarTareas(); 
+}
+
 
 addList = () => {
     let inputText = filterList(input.value);
@@ -49,7 +51,7 @@ addList = () => {
         input.value = "";
         inputDescription.value = "";
         listNum++;
-        guardarTareas(); // Guardar tarea agregada
+        guardarTareas(); a
     }
 }
 
@@ -123,22 +125,13 @@ function guardarTareas() {
         const descripcion = li.querySelector('textarea').value;
         const priority = li.querySelector(`#priority${li.id.slice(4)}`).innerText;
         const completada = li.querySelector('span').classList.contains('text-decoration-line-through');
-        const categoria = li.querySelector(`#category${li.id.slice(4)}`).value;
-
-        return { tarea, descripcion, priority, completada, categoria };
+        return { tarea, descripcion, priority, completada };
     });
 
     usuariosTareas[usuario] = tareas;
     localStorage.setItem('usuariosTareas', JSON.stringify(usuariosTareas));
-    console.log('Tareas guardadas:', usuariosTareas); // Añadido para depuración
 }
 
-function cerrarSesion() {
-    guardarTareas(); 
-    localStorage.removeItem('usuario');
-    console.log('Usuario desconectado'); // Añadido para depuración
-    window.location.href = 'finish.html'; 
-}
 function cargarTareas() {
     const usuario = localStorage.getItem('usuario');
     let usuariosTareas = JSON.parse(localStorage.getItem('usuariosTareas')) || {};
@@ -173,5 +166,12 @@ function cargarTareas() {
     }
 }
 
+function cerrarSesion() {
+    guardarTareas(); 
+    localStorage.removeItem('usuario');
+    window.location.href = 'finish.html'; 
+}
 
-
+window.addEventListener('beforeunload', function(event) {
+    guardarTareas();
+});
