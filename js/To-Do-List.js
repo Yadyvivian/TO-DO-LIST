@@ -130,6 +130,14 @@ function guardarTareas() {
 
     usuariosTareas[usuario] = tareas;
     localStorage.setItem('usuariosTareas', JSON.stringify(usuariosTareas));
+    console.log('Tareas guardadas:', usuariosTareas); // Añadido para depuración
+}
+
+function cerrarSesion() {
+    guardarTareas(); 
+    localStorage.removeItem('usuario');
+    console.log('Usuario desconectado'); // Añadido para depuración
+    window.location.href = 'finish.html'; 
 }
 function cargarTareas() {
     const usuario = localStorage.getItem('usuario');
@@ -165,8 +173,5 @@ function cargarTareas() {
     }
 }
 
-function cerrarSesion() {
-    guardarTareas(); 
-    localStorage.removeItem('usuario');
-    window.location.href = 'finish.html'; 
-}
+
+
