@@ -26,3 +26,6 @@ Marcar como Completadas: Una vez finalizada una tarea, marca la casilla de verif
 Tecnologías Utilizadas
 
 Frontend: HTML, CSS, JavaScript
+
+Autor: Viviana Sánchez
+
